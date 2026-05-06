@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<!----- CSS file ----->
+<link rel="stylesheet" href="./style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Where to Eat?</title>
+  <!----- Google Fonts ----->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+<!----- Slim Sticky Header ----->
+<div class="slim-header" id="slimHeader">
+  <div class="slim-inner">
+    <div class="slim-logo">
+      <span class="slim-logo-mark"><i class="fa-solid fa-heart"></i></span>
+      For You &amp; Your Parents
+    </div>
+    <button class="slim-fav" data-action="show-favorites">
+      <i class="fa-solid fa-heart"></i>
+      <span class="label">Favourites</span>
+      <span class="count" id="slimFavCount">0</span>
+    </button>
+  </div>
+</div>
+
+<!----- Hero Banner ----->
+<section class="hero" id="hero">
+  <div class="hero-logo"><i class="fa-solid fa-heart"></i></div>
+  <h1>Restaurant Recommendations</h1>
+  <p class="tagline">For you &amp; your parents — pick wherever you like ♡</p>
+  <button class="hero-fav-pill" data-action="show-favourites">
+    <i class="fa-solid fa-heart"></i>
+    My Favourites
+    <span class="count" id="heroFavCount">0</span>
+  </button>
+</section>
+
+<!----- Filter Bar ----->
+<div class="filter-bar">
+  <div class="filter-scroll" id="filterScroll">
+    <button class="filter-btn active" data-filter="all"><i class="fa-solid fa-utensils"></i> All</button>
+    <button class="filter-btn" data-filter="favourites"><i class="fa-solid fa-heart"></i> Favourites <span class="fav-count" id="filterFavCount">0</span></button>
+    <button class="filter-btn" data-filter="Chinese"><i class="fa-solid fa-bowl-rice"></i> Chinese</button>
+    <button class="filter-btn" data-filter="Japanese"><i class="fa-solid fa-fish"></i> Japanese</button>
+    <button class="filter-btn" data-filter="Western"><i class="fa-solid fa-wine-glass"></i> Western</button>
+    <button class="filter-btn" data-filter="Others"><i class="fa-solid fa-ellipsis"></i> Others</button>
+  </div>
+</div>
+
+<!------ Restarurant Cards ------>
+<div class="cards-grid" id="cardsGrid">
+  <!----------- CHINESE ----------->
+  <article class="restaurant-card" data-id="lin-heung-lau" data-category="Chinese">
+    <button class="fav-toggle" aria-label="Favourite" disabled><i class="fa-regular fa-heart"></i></button>
+    <div class="card-header">
+      <div class="restaurant-name">Lin Heung Lau</div>
+      <span class="category-tag">Chinese</span>
+    </div>
+    <div class="card-meta">
+      <span><i class="fa-solid fa-location-dot"></i> Kimberley Rd, TST</span>
+      <span><i class="fa-solid fa-dollar-sign"></i> $$</span>
+    </div>
+    <div class="notes">The most traditional dim sum restaurant with aunties pushing dim sum trolleys.</div>
+    <div class="card-tags">
+      <span class="tag"><i class="fa-solid fa-tag"></i> Open 24 hours</span>
+      <span class="tag"><i class="fa-solid fa-tag"></i> classic</span>
+      <span class="tag"><i class="fa-solid fa-tag"></i> traditional</span>
+    </div>
+    <div class="card-footer">
+      <span class="date-stamp"><i class="fa-regular fa-calendar"></i> Added May 05, 2026</span>
+      <div class="footer-links">
+      <a class="site-link" href="https://inline.app/booking/-O31tPdJVLyUNiyBAg9F:inline-live-3/-OUmgswZjBmB3yrOI9wk?language=en" target="_blank" rel="noopener">
+        <i class="fa-solid fa-globe"></i> Website
+      </a>
+      <a class="map-link" href="https://maps.app.goo.gl/J2RuavFavAJNC3it9" target="_blank" rel="noopener">
+        <i class="fa-solid fa-map-location-dot"></i> Map
+      </a>
+    </div>
+  </article>
+  
+  <article class="restaurant-card" data-id="hexa" data-category="Chinese">
+    <button class="fav-toggle" aria-label="Favourite" disabled><i class="fa-regular fa-heart"></i></button>
+    <div class="card-header">
+      <div class="restaurant-name">HEXA</div>
+      <span class="category-tag">Chinese</span>
+    </div>
+    <div class="card-meta">
+      <span><i class="fa-solid fa-location-dot"></i> Harbour City, TST</span>
+      <span><i class="fa-solid fa-dollar-sign"></i> $$$</span>
+    </div>
+    <div class="notes">Very nice place & food. Better go at night to enjoy the view by the window seats.</div>
+    <div class="card-tags">
+      <span class="tag"><i class="fa-solid fa-tag"></i> nice view</span>
+      <span class="tag"><i class="fa-solid fa-tag"></i> comfy seats</span>
+      <span class="tag"><i class="fa-solid fa-tag"></i> reservation</span>
+    </div>
+    <div class="card-footer">
+      <span class="date-stamp"><i class="fa-regular fa-calendar"></i> Added May 05, 2026</span>
+      <div class="footer-links">
+      <a class="site-link" href="https://hexa.webflow.io/" target="_blank" rel="noopener">
+        <i class="fa-solid fa-globe"></i> Website
+      </a>
+      <a class="map-link" href="https://maps.app.goo.gl/KoasxKdiS5TR6zP18" target="_blank" rel="noopener">
+        <i class="fa-solid fa-map-location-dot"></i> Map
+      </a>
+    </div>
+  </article>
+
+  <article class="restaurant-card" data-id="tang-court" data-category="Chinese">
+    <button class="fav-toggle" aria-label="Favourite" disabled><i class="fa-regular fa-heart"></i></button>
+    <div class="card-header">
+      <div class="restaurant-name">T'ang Court</div>
+      <span class="category-tag">Chinese</span>
+    </div>
+    <div class="card-meta">
+      <span><i class="fa-solid fa-location-dot"></i> Langham Hotel, TST</span>
+      <span><i class="fa-solid fa-dollar-sign"></i> $$$</span>
+    </div>
+    <div class="notes">I've been there once. Very delicious Chinese cuisine!</div>
+    <div class="card-tags">
+      <span class="tag"><i class="fa-solid fa-tag"></i> Michelin 3-Star</span>
+      <span class="tag"><i class="fa-solid fa-tag"></i> dress code</span>
+      <span class="tag"><i class="fa-solid fa-tag"></i> reservation</span>
+    </div>
+    <div class="card-footer">
+      <span class="date-stamp"><i class="fa-regular fa-calendar"></i> Added May 05, 2026</span>
+      <div class="footer-links">
+      <a class="site-link" href="https://www.langhamhotels.com/en/the-langham/hong-kong/dine/tang-court/" target="_blank" rel="noopener">
+        <i class="fa-solid fa-globe"></i> Website
+      </a>
+      <a class="map-link" href="https://maps.app.goo.gl/jfpzJcdh5QYVhHFN7" target="_blank" rel="noopener">
+        <i class="fa-solid fa-map-location-dot"></i> Map
+      </a>
+    </div>
+  </article>
+
+  <article class="restaurant-card" data-id="celestial-court" data-category="Chinese">
+    <button class="fav-toggle" aria-label="Favourite" disabled><i class="fa-regular fa-heart"></i></button>
+    <div class="card-header">
+      <div class="restaurant-name">Celestial Court</div>
+      <span class="category-tag">Chinese</span>
+    </div>
+    <div class="card-meta">
+      <span><i class="fa-solid fa-location-dot"></i> Sheraton Hotel, TST</span>
+      <span><i class="fa-solid fa-dollar-sign"></i> $$$</span>
+    </div>
+    <div class="notes">I've been here once a few years ago. Great tradition Chinese food plus splendid design inside.</div>
+    <div class="card-tags">
+      <span class="tag"><i class="fa-solid fa-tag"></i> grand interior</span>
+      <span class="tag"><i class="fa-solid fa-tag"></i> reservation</span>
+    </div>
+    <div class="card-footer">
+      <span class="date-stamp"><i class="fa-regular fa-calendar"></i> Added May 5, 2026</span>
+      <div class="footer-links">
+      <a class="site-link" href="https://www.celestialcourt.hk/" target="_blank" rel="noopener">
+        <i class="fa-solid fa-globe"></i> Website
+      </a>
+      <a class="map-link" href="https://maps.app.goo.gl/erQVBtRZZksq7Mrn9" target="_blank" rel="noopener">
+        <i class="fa-solid fa-map-location-dot"></i> Map
+      </a>
+    </div>
+  </article>
+
+  <article class="restaurant-card" data-id="yat-tung-heen" data-category="Chinese">
+    <button class="fav-toggle" aria-label="Favourite" disabled><i class="fa-regular fa-heart"></i></button>
+    <div class="card-header">
+      <div class="restaurant-name">Yat Tung Heen</div>
+      <span class="category-tag">Chinese</span>
+    </div>
+    <div class="card-meta">
+      <span><i class="fa-solid fa-location-dot"></i> Nathan Rd, Jordan</span>
+      <span><i class="fa-solid fa-dollar-sign"></i> $$$</span>
+    </div>
+    <div class="notes">Take a look at the set lunch menu!</div>
+    <div class="card-tags">
+      <span class="tag"><i class="fa-solid fa-tag"></i> Michelin 1-Star</span>
+      <span class="tag"><i class="fa-solid fa-tag"></i> old fashion vibe</span>
+      <span class="tag"><i class="fa-solid fa-tag"></i> reservation</span>
+    </div>
+    <div class="card-footer">
+      <span class="date-stamp"><i class="fa-regular fa-calendar"></i> Added May 06, 2026</span>
+      <div class="footer-links">
+      <a class="site-link" href="https://www.yattungheen.com/home" target="_blank" rel="noopener">
+        <i class="fa-solid fa-globe"></i> Website
+      </a>
+      <a class="map-link" href="https://maps.app.goo.gl/dRnVoh7RMbFsiprr5" target="_blank" rel="noopener">
+        <i class="fa-solid fa-map-location-dot"></i> Map
+      </a>
+    </div>
+  </article>
+  
+  <!----------- JAPANESE ----------->
+  <article class="restaurant-card" data-id="ginza-kagari" data-category="Japanese">
+    <button class="fav-toggle" aria-label="Favourite" disabled><i class="fa-regular fa-heart"></i></button>
+    <div class="card-header">
+      <div class="restaurant-name">Ginza Kagari</div>
+      <span class="category-tag">Japanese</span>
+    </div>
+    <div class="card-meta">
+      <span><i class="fa-solid fa-location-dot"></i> K11 Art Mall, TST</span>
+      <span><i class="fa-solid fa-dollar-sign"></i> $$</span>
+    </div>
+    <div class="notes">The nice ramen place I've told you! Delicious ramen with thick soup! Rice is nice too~ Probably need to wait during busy hours tho.</div>
+    <div class="card-tags">
+      <span class="tag"><i class="fa-solid fa-tag"></i> ramen</span>
+      <span class="tag"><i class="fa-solid fa-tag"></i> avoid busy hours</span>
+    </div>
+    <div class="card-footer">
+      <span class="date-stamp"><i class="fa-regular fa-calendar"></i> Added May 07, 2026</span>
+      <div class="footer-links">
+      <a class="site-link" href="https://s.openrice.com/QrKS0jny7W0" target="_blank" rel="noopener">
+        <i class="fa-solid fa-globe"></i> Website
+      </a>
+      <a class="map-link" href="https://maps.app.goo.gl/YNkV4GrwVWZZ4rSp9" target="_blank" rel="noopener">
+        <i class="fa-solid fa-map-location-dot"></i> Map
+      </a>
+    </div>
+  </article>
+
+  <article class="restaurant-card" data-id="yakiniku-luigi" data-category="Japanese">
+    <button class="fav-toggle" aria-label="Favourite" disabled><i class="fa-regular fa-heart"></i></button>
+    <div class="card-header">
+      <div class="restaurant-name">Yakiniku Luigi</div>
+      <span class="category-tag">Japanese</span>
+    </div>
+    <div class="card-meta">
+      <span><i class="fa-solid fa-location-dot"></i> K11 Musea, TST</span>
+      <span><i class="fa-solid fa-dollar-sign"></i> $$$</span>
+    </div>
+    <div class="notes">Japanese BBQ restaurant that is on my to-go list. Almost tried it but didn't cuz I was too full... The environment is very good and the food smells nice from the door!</div>
+    <div class="card-tags">
+      <span class="tag"><i class="fa-solid fa-tag"></i> meat</span>
+      <span class="tag"><i class="fa-solid fa-tag"></i> BBQ</span>
+    </div>
+    <div class="card-footer">
+      <span class="date-stamp"><i class="fa-regular fa-calendar"></i> Added May 07, 2026</span>
+      <div class="footer-links">
+      <a class="site-link" href="https://book.bistrochat.com/yakiniku-luigi?l=en_US" target="_blank" rel="noopener">
+        <i class="fa-solid fa-globe"></i> Website
+      </a>
+      <a class="map-link" href="https://maps.app.goo.gl/zdMq3E8Fp2gdWv2q7" target="_blank" rel="noopener">
+        <i class="fa-solid fa-map-location-dot"></i> Map
+      </a>
+    </div>
+  </article>
+  
+  <!----------- WESTERN ----------->
+  <article class="restaurant-card" data-id="picanhas" data-category="Western">
+    <button class="fav-toggle" aria-label="Favourite" disabled><i class="fa-regular fa-heart"></i></button>
+    <div class="card-header">
+      <div class="restaurant-name">Picanhas'</div>
+      <span class="category-tag">Western</span>
+    </div>
+    <div class="card-meta">
+      <span><i class="fa-solid fa-location-dot"></i> Elgin Street, Central</span>
+      <span><i class="fa-solid fa-dollar-sign"></i> $$</span>
+    </div>
+    <div class="notes">Super nice steak place with the best fries ever!</div>
+    <div class="card-tags">
+      <span class="tag"><i class="fa-solid fa-tag"></i> steak</span>
+      <span class="tag"><i class="fa-solid fa-tag"></i> fries</span>
+      <span class="tag"><i class="fa-solid fa-tag"></i> nice staff</span>
+      <span class="tag"><i class="fa-solid fa-tag"></i> reservation</span>
+    </div>
+    <div class="card-footer">
+      <span class="date-stamp"><i class="fa-regular fa-calendar"></i> Added May 07, 2026</span>
+      <div class="footer-links">
+      <a class="site-link" href="https://www.instagram.com/picanhas_hk?igsh=aWMyam43cXg3ZXlm" target="_blank" rel="noopener">
+        <i class="fa-solid fa-globe"></i> Website
+      </a>
+      <a class="map-link" href="https://maps.app.goo.gl/6ShTRNvNxbCDyLmu8" target="_blank" rel="noopener">
+        <i class="fa-solid fa-map-location-dot"></i> Map
+      </a>
+    </div>
+  </article>
+
+
+  <!----------- OTHERS ----------->
+  <article class="restaurant-card" data-id="punjab-warriors" data-category="Others">
+    <button class="fav-toggle" aria-label="Favourite" disabled><i class="fa-regular fa-heart"></i></button>
+    <div class="card-header">
+      <div class="restaurant-name">Punjab Warriors</div>
+      <span class="category-tag">Others</span>
+    </div>
+    <div class="card-meta">
+      <span><i class="fa-solid fa-location-dot"></i> Lyndhurst Terrace, Central</span>
+      <span><i class="fa-solid fa-dollar-sign"></i> $$</span>
+    </div>
+    <div class="notes">They have not only great indian food but also very good drinks! You may be surprised~</div>
+    <div class="card-tags">
+      <span class="tag"><i class="fa-solid fa-tag"></i> huge place</span>
+      <span class="tag"><i class="fa-solid fa-tag"></i> happy vibe</span>
+      <span class="tag"><i class="fa-solid fa-tag"></i> live drum show</span>
+      <span class="tag"><i class="fa-solid fa-tag"></i> reservation</span>
+    </div>
+    <div class="card-footer">
+      <span class="date-stamp"><i class="fa-regular fa-calendar"></i> Added May 07, 2026</span>
+      <div class="footer-links">
+      <a class="site-link" href="https://www.instagram.com/punjabwarriorshk?igsh=MXN4N2g3cDh6c3Bvag==" target="_blank" rel="noopener">
+        <i class="fa-solid fa-globe"></i> Website
+      </a>
+      <a class="map-link" href="https://maps.app.goo.gl/4RHCNMZXUFsMACTs8" target="_blank" rel="noopener">
+        <i class="fa-solid fa-map-location-dot"></i> Map
+      </a>
+    </div>
+  </article>
+
+
+<!----- 
+  <article class="restaurant-card" data-id="petals-pages" data-category="Others">
+    <button class="fav-toggle" aria-label="Favourite" disabled><i class="fa-regular fa-heart"></i></button>
+    <div class="card-header">
+      <div class="restaurant-name">NAME</div>
+      <span class="category-tag">Others</span>
+    </div>
+    <div class="card-meta">
+      <span><i class="fa-solid fa-location-dot"></i> WHERE?</span>
+      <span><i class="fa-solid fa-dollar-sign"></i> $$</span>
+    </div>
+    <div class="notes">NOTESSSSSSSSSSS.</div>
+    <div class="card-tags">
+      <span class="tag"><i class="fa-solid fa-tag"></i> reservation</span>
+    </div>
+    <div class="card-footer">
+      <span class="date-stamp"><i class="fa-regular fa-calendar"></i> Added May 06, 2026</span>
+      <div class="footer-links">
+      <a class="site-link" href="SITE LINK" target="_blank" rel="noopener">
+        <i class="fa-solid fa-globe"></i> Website
+      </a>
+      <a class="map-link" href="MAP LINK" target="_blank" rel="noopener">
+        <i class="fa-solid fa-map-location-dot"></i> Map
+      </a>
+    </div>
+  </article> ----->
+
+
+
+
+</div>
+
+<!------ Sync Indicator ------>
+<div class="sync-indicator" id="syncIndicator">
+  <span class="sync-dot"></span>
+  <span id="syncText">Connecting…</span>
+</div>
+
+<!------ Footer  ------>
+<footer class="footer">
+  Made with <i class="fa-solid fa-heart heart"></i> just for you
+</footer>
+
+<!------ JS file  ------>
+<script type="module" src="script.js"></script>
+</body>
+</html>
