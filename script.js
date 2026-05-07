@@ -53,10 +53,52 @@ function showSync(text, isError = false) {
   }
 }
 
+
+
+
+
+
+// Dark mode secure
+(function() {
+  try {
+    var stored = localStorage.getItem('theme');
+    var systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    var theme = stored || (systemDark ? 'dark' : 'light');
+    document.documentElement.setAttribute('data-theme', theme);
+  } catch(e) {
+    document.documentElement.setAttribute('data-theme', 'light');
+  }
+})();
+
+
+
 // State
 let currentFilter = 'all';
 let localFavourites = {}; // { 'jade-garden': true, ... }
 let isApplyingRemote = false;
+
+
+// Sort restaurant cards by date added (newest first)
+(function sortCardsByDateAdded() {
+  const grid = document.getElementById('cardsGrid');
+  if (!grid) return;
+
+  const cardsToSort = Array.from(grid.querySelectorAll('.restaurant-card'));
+  cardsToSort.sort((a, b) => {
+    return new Date(b.dataset.added) - new Date(a.dataset.added);
+  });
+
+// Double Check the date added
+  cardsToSort.sort((a, b) => {
+  const dateA = new Date(a.dataset.added || 0);
+  const dateB = new Date(b.dataset.added || 0);
+  return dateB - dateA;
+});
+  
+  cardsToSort.forEach(card => grid.appendChild(card));
+})();
+
+
 
 const cards = document.querySelectorAll('.restaurant-card');
 const filterButtons = document.querySelectorAll('.filter-btn');
@@ -199,6 +241,33 @@ if (filterBar) {
     }
   }, { passive: false });
 }
+
+// Dark Mode
+(function() {
+  const toggle = document.getElementById('themeToggle');
+  const meta = document.getElementById('theme-color-meta');
+  const root = document.documentElement;
+
+  function setTheme(theme) {
+    root.setAttribute('data-theme', theme);
+    try { localStorage.setItem('theme', theme); } catch(e) {}
+    if (meta) {
+      meta.setAttribute('content', theme === 'dark' ? '#0f1d33' : '#f5faff');
+    }
+  }
+
+  toggle.addEventListener('click', () => {
+    const current = root.getAttribute('data-theme');
+    setTheme(current === 'dark' ? 'light' : 'dark');
+  });
+
+  // Respect OS changes only if user hasn't made an explicit choice
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+    if (!localStorage.getItem('theme')) {
+        setTheme(e.matches ? 'dark' : 'light');
+    }
+  });
+})();
 
 // NON-FIREBASE UI SCRIPT
 // Slim header reveal (independent of Firebase)
