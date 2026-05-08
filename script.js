@@ -53,11 +53,6 @@ function showSync(text, isError = false) {
   }
 }
 
-
-
-
-
-
 // Dark mode secure
 (function() {
   try {

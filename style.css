@@ -196,6 +196,142 @@ body {
   transform: rotate(0) scale(1);
 }
 
+/****************************************/
+/* Places to Go*/
+/* Back link in the top-left corner */
+.back-link {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.5rem 0.9rem;
+  background: var(--card-bg, #fff);
+  color: var(--text-color, #1a1a1a);
+  border-radius: 999px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  z-index: 100;
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 20px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  color: var(--text-heading);
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 500;
+  line-height: 1.2;
+  text-decoration: none;       /* kills anchor underline */
+  box-shadow: var(--shadow-pill);
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.pill:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-pill-hover, 0 4px 12px rgba(0,0,0,0.1));
+}
+
+.pill:visited {
+  color: var(--text-heading);  /* prevents purple visited links */
+}
+
+.back-link:hover {
+  transform: translateX(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+/* Simple hero for the places page */
+.places-hero {
+  margin-bottom: 22px;
+}
+
+.places-subtitle {
+  color: var(--text-tagline);
+  font-size: 1.05rem;
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  position: relative;
+  z-index: 2;
+  margin-bottom: 22px;
+}
+
+/* Optional: hide the back-link label on very small screens */
+@media (max-width: 480px) {
+  .back-link span {
+    display: none;
+  }
+  .back-link {
+    padding: 0.6rem;
+  }
+}
+
+/* Places button */
+.places-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 14px;
+  padding: 9px 20px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  color: var(--text-heading);
+  font-size: 0.9rem;
+  font-weight: 500;
+  font-family: inherit;
+  line-height: 1.2;
+  text-decoration: none;
+  box-shadow: var(--shadow-pill);
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+  transition: all 0.25s ease;
+}
+
+.places-link i:first-child {
+  color: var(--accent-mid);
+  font-size: 0.85rem;
+}
+
+.places-link .arrow {
+  font-size: 0.72rem;
+  color: var(--text-soft);
+  opacity: 0.7;
+  transition: transform 0.25s ease, opacity 0.25s ease, color 0.25s ease;
+}
+
+.card--align-right .card-footer {
+  justify-content: flex-end;  /* if footer is flex */
+}
+
+/* Hover only on devices that actually hover */
+@media (hover: hover) {
+  .places-link:hover {
+    transform: translateY(-1px);
+    border-color: var(--accent-light);
+    box-shadow: var(--shadow-pill-hover);
+    color: var(--accent-dark);
+  }
+
+  .places-link:hover .arrow {
+    transform: translateX(3px);
+    opacity: 1;
+    color: var(--accent-mid);
+  }
+}
+/****************************************/
+
 /* Slim Sticky Header */
 .slim-header {
   position: fixed;
@@ -261,6 +397,7 @@ body {
   align-items: center;
   gap: 6px;
   padding: 6px 12px;
+  line-height: 1.2;
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 18px;
@@ -399,6 +536,7 @@ body {
   align-items: center;
   gap: 8px;
   padding: 9px 20px;
+  line-height: 1.2;
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 22px;
@@ -478,6 +616,7 @@ body {
   border: 1px solid var(--border);
   color: var(--text-secondary);
   padding: 8px 16px;
+  line-height: 1.2;
   border-radius: 20px;
   font-size: 0.85rem;
   font-weight: 500;
@@ -603,6 +742,7 @@ body {
   flex-wrap: wrap;
   gap: 6px;
   margin-bottom: 14px;
+  font-family: inherit;
 }
 
 .tag {
@@ -617,6 +757,7 @@ body {
   align-items: center;
   gap: 4px;
   transition: background 0.4s ease, color 0.4s ease, border-color 0.4s ease;
+  font-family: inherit;
 }
 
 .tag i {
@@ -670,6 +811,7 @@ body {
   align-items: center;
   gap: 4px;
   padding: 7px 14px;
+  line-height: 1.2;
   background: var(--surface);
   color: var(--accent-mid);
   text-decoration: none;
@@ -701,6 +843,7 @@ body {
   color: var(--text-heading);
   text-decoration: none;
   padding: 7px 14px;
+  line-height: 1.2;
   border-radius: 14px;
   background: var(--surface-tag-soft);
   border: 1px solid var(--border-soft);
@@ -823,6 +966,7 @@ body {
   color: var(--accent-mid);
   margin: 0 4px;
 }
+
 
 /* Responsive Setting */
 @media (max-width: 600px) {

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f5faff" id="theme-color-meta">
+  <title>Places to Go</title>
+
+  <!-- Existing stylesheet -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Inline theme setup so dark mode loads without flicker -->
+  <script>
+    (function() {
+      try {
+        var stored = localStorage.getItem('theme');
+        var systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        var theme = stored || (systemDark ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch(e) {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    })();
+  </script>
+</head>
+<body class="places-page">
+<!----- Dark Mode Toggle ----->
+<button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+  <i class="fa-solid fa-moon theme-icon-moon"></i>
+  <i class="fa-solid fa-sun theme-icon-sun"></i>
+</button>
+
+  <!-- Back link in the corner -->
+  <a href="index.html" class="pill back-link" aria-label="Back to favourites">
+    <i class="fa-solid fa-arrow-left"></i>
+    <span aria-hidden="true">Back</span>
+  </a>
+
+<!-- Simple hero -->
+  <section class="hero places-hero" id="hero">
+  <div class="hero-logo"><i class="fa-solid fa-heart"></i></div>
+  <h1>Places to Go</h1>
+  <p class="tagline">Places your parents may be interested ine ♡</p>
+</section>
+
+
+<!------------------ Simple hero 2
+  <header class="places-hero">
+    <h1>Places to Go</h1>
+    <p class="places-subtitle">Places your parents may be interested in ♡</p>
+  </header>
+-------------------->
+
+  <!-- Cards grid -->
+  <main class="cards-grid" id="placesGrid">
+
+    <article class="restaurant-card card--align-right">
+      <div class="card-header">
+        <div class="restaurant-name">Hong Kong Palace Museum</div>
+      </div>
+      <div class="card-meta">
+        <span><i class="fa-solid fa-location-dot"></i> West Kowloon Cultural District, Kowloon</span>
+      </div>
+      <div class="notes">There's an ancient Egypt Exhibition there! It should be nice to spend a day there since it's a large place. Check the website for more info.</div>
+      <div class="card-tags">
+        <span class="tag"><i class="fa-solid fa-tag"></i> closed on Tue</span>
+        <span class="tag"><i class="fa-solid fa-tag"></i> tickets are needed</span>
+      </div>
+      <div class="card-footer">
+        <div class="footer-links">
+          <a class="site-link" href="https://www.hkpm.org.hk/en/home" target="_blank" rel="noopener">
+            <i class="fa-solid fa-globe"></i> Website
+          </a>
+          <a class="map-link" href="https://maps.app.goo.gl/tjRJVCZeeNKqPDCE6" target="_blank" rel="noopener">
+            <i class="fa-solid fa-map-location-dot"></i> Map
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <article class="restaurant-card card--align-right">
+      <div class="card-header">
+        <div class="restaurant-name">Hong Kong M+ Museum</div>
+      </div>
+      <div class="card-meta">
+        <span><i class="fa-solid fa-location-dot"></i> West Kowloon Cultural District, Kowloon</span>
+      </div>
+      <div class="notes">One more museum in West Kowloon Cultural District. Would be great to explore that area!</div>
+      <div class="card-tags">
+        <span class="tag"><i class="fa-solid fa-tag"></i> tickets are needed</span>
+      </div>
+      <div class="card-footer">
+        <div class="footer-links">
+          <a class="site-link" href="https://www.mplus.org.hk/en/" target="_blank" rel="noopener">
+            <i class="fa-solid fa-globe"></i> Website
+          </a>
+          <a class="map-link" href="https://maps.app.goo.gl/78K92NQVk52ShgFf9" target="_blank" rel="noopener">
+            <i class="fa-solid fa-map-location-dot"></i> Map
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <article class="restaurant-card card--align-right">
+      <div class="card-header">
+        <div class="restaurant-name">Hong Kong Space Museum</div>
+      </div>
+      <div class="card-meta">
+        <span><i class="fa-solid fa-location-dot"></i> Sea side, TST</span>
+      </div>
+      <div class="notes">Check the sky show time table! Your parents may find it fun!</div>
+      <div class="card-tags">
+        <span class="tag"><i class="fa-solid fa-tag"></i> sky show</span>
+        <span class="tag"><i class="fa-solid fa-tag"></i> exhibitions</span>
+      </div>
+      <div class="card-footer">
+        <div class="footer-links">
+          <a class="site-link" href="https://hk.space.museum/en/web/spm/home.html" target="_blank" rel="noopener">
+            <i class="fa-solid fa-globe"></i> Website
+          </a>
+          <a class="map-link" href="https://maps.app.goo.gl/TvcPxfgHARcsU6Wi9" target="_blank" rel="noopener">
+            <i class="fa-solid fa-map-location-dot"></i> Map
+          </a>
+        </div>
+      </div>
+    </article>
+
+    
+    <article class="restaurant-card card--align-right">
+      <div class="card-header">
+        <div class="restaurant-name">Hong Kong Museum of Art</div>
+      </div>
+      <div class="card-meta">
+        <span><i class="fa-solid fa-location-dot"></i> Sea side,TST</span>
+      </div>
+      <div class="notes">Another nice place to kill time with air-con!</div>
+      <div class="card-tags">
+        <span class="tag"><i class="fa-solid fa-tag"></i> art</span>
+        <span class="tag"><i class="fa-solid fa-tag"></i> exhibitions</span>
+        <span class="tag"><i class="fa-solid fa-tag"></i> free</span>
+      </div>
+      <div class="card-footer">
+        <div class="footer-links">
+          <a class="site-link" href="https://hk.art.museum/en/web/ma/home.html" target="_blank" rel="noopener">
+            <i class="fa-solid fa-globe"></i> Website
+          </a>
+          <a class="map-link" href="https://maps.app.goo.gl/EJEkZGeBgFbkphc16" target="_blank" rel="noopener">
+            <i class="fa-solid fa-map-location-dot"></i> Map
+          </a>
+        </div>
+      </div>
+    </article> 
+
+
+
+<!-----
+    <article class="restaurant-card card--align-right">
+      <div class="card-header">
+        <div class="restaurant-name">PLACE</div>
+      </div>
+      <div class="card-meta">
+        <span><i class="fa-solid fa-location-dot"></i> WHERE</span>
+      </div>
+      <div class="notes">NOTES</div>
+      <div class="card-tags">
+        <span class="tag"><i class="fa-solid fa-tag"></i> TAG</span>
+        <span class="tag"><i class="fa-solid fa-tag"></i> TAG</span>
+      </div>
+      <div class="card-footer">
+        <div class="footer-links">
+          <a class="site-link" href="#" target="_blank" rel="noopener">
+            <i class="fa-solid fa-globe"></i> Website
+          </a>
+          <a class="map-link" href="#" target="_blank" rel="noopener">
+            <i class="fa-solid fa-map-location-dot"></i> Map
+          </a>
+        </div>
+      </div>
+    </article> 
+----->
+  
+
+  </main>
+
+<!------ Footer  ------>
+<footer class="footer">
+  Made with <i class="fa-solid fa-heart heart"></i> just for you
+</footer>
+
+<script>
+  (function() {
+    var btn = document.getElementById('themeToggle');
+    var icon = btn.querySelector('i');
+    var meta = document.getElementById('theme-color-meta');
+
+    function syncUI(theme) {
+      var isDark = theme === 'dark';
+      icon.className = isDark ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
+      btn.setAttribute('aria-pressed', isDark);
+      if (meta) meta.setAttribute('content', isDark ? '#1e2a3a' : '#f5faff');
+    }
+
+    // Initialise icon to match current theme
+    syncUI(document.documentElement.getAttribute('data-theme'));
+
+    btn.addEventListener('click', function() {
+      var current = document.documentElement.getAttribute('data-theme');
+      var next = current === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      try { localStorage.setItem('theme', next); } catch(e) {}
+      syncUI(next);
+    });
+  })();
+</script>
+  <!-- Minimal script: just the theme toggle -->
+</body>
+</html>
